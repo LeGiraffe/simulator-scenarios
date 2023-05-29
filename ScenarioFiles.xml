@@ -2636,7 +2636,7 @@
             <Route>ARM IVL MOR</Route>
             <TimedMessages>
               <TimedMessage Time="720" Message="AM223, IFR King Air, Taxis Port Macquarie for MOree, Runway 03." />
-              <TimedMessage Time="960" Message="MWE Takeoff." />
+              <TimedMessage Time="960" Message="AM223 Takeoff." />
               <TimedMessage Time="1920" Message="Request DCT MRZSE Moree Sierra Echo for the RNP Runway 01." />
             </TimedMessages> 
         </Aircraft>
@@ -3383,19 +3383,43 @@
     <Name>Enroute INL</Name>
     <Type>Enroute</Type>
     <StudentBriefing>You are operating Inverell.    
+  
+    Brisbane is Runway 19 Left and Right, Instrument Approaches.  
+    Brisbane Approach is online, as is all neighbouring sectors. No Towers are online.  
+    No significant weather in your airspace.  
+    
+    Traffic:  
+    AIR VAN 93, Approaching PARRY Eastbound FL350, Coordination Not Complete.  
+    FLY DOC 236, Inbound RK FL140, Will Likely need descent in the next 10 minutes.  
+      
+    We've received Coordination on UAE449 via BONEY FL360 and ZBF via RUROX OCTA at A060.   
 
-    Brisbane Approach and all surrounding ENR's are online. 
-
-    YBRK is Class G  
-
-    There is no significant weather within your airspace.
     </StudentBriefing>
     <InstructorNotes>  
     Ensure the student disables GRIB winds.  
 
+    This exercise can be expected to run for 55 minutes.  
+
+    Most of this exercise is for the student to demonstate a continuous scan for the processing of routine traffic, to detect and solve various traffic conflicts.  
+
+    Key Moments;  
+    T+10: **AVN93** (Coordination to TSN - Heads Up)  
+    T+18: **VOZ1238** vs **FD436** (Traffic RK)  
+    T+22: **SIA236** vs **XAX206** (LOSA by Climbing SIA236 to RFL on first contact, LOS when not fixed)  
+    T+22-31: **XAX206** (Coordination to BAN - NO STAR)  
+    T+24: **TGG518** vs **QFA529** (Confliction Preventing Early Descent when Assigning STAR, possible LOSA/LOS)  
+    T+26: **CPA103** vs **QFA7474** (Speed Control required following bad hand-off from previous sector)  
+    T+31: **XAX206** vs **TGW7** (LOSA by Issuing XAX "When Ready Descend FLXXX".)   
+    T+34: **TGG518** vs **JST817** (Requires Sequencing)  
+    T+39: **JST817** vs **BNZ45** (LOSA/LOS if Descent below FL210 issued to JST, LOS when not fixed.)  
+    T+40: **SEQ** vs **ZBF** (Traffic BUD)  
+    T+50: **ZBF** vs **FD401** (Traffic HBA)  
+
     **ZSY** to request flight following down to YHBA. Try and time the departure of **QLK381D** with the arrival of **ZSY**  
 
-    You will be prompted for the departure of **VOZ1238** and **BNZ45**  
+    You will be prompted for the departure of **VOZ1238**, **BNZ45** and **SEQ**. BN / CG Departures are automated.
+
+    To simplify / declutter the exercise, the following callsigns may be deleted when they appear departing BN: **QFA1880**, **RXA387**, **VOZ962**, **JST930**, **QFA533**
 
     Have Fun</InstructorNotes>
     <Targets>
@@ -3405,6 +3429,23 @@
         <Position Latitude="-21.796724" Longitude="148.87873" Speed="400" Altitude="37000" />
         <FlightPlan Active="true" Departure="YBCS" Destination="YBBN" Alternative="YBCG" Rules="I" CruiseSpeed="400" ETD="0000" ATD="0000" RFL="37000" EETHours="02" EETMins="30" FuelHours="0" FuelMins="0" Remarks="CALL/VELOCITY    /v/">DCT SWIFT Y177 SMOKA</FlightPlan>
         <Route>COCKA RUROX NIROK LAMUG SMOKA YBBN</Route>
+      </Aircraft>
+      <Aircraft Callsign="AVN93" Type="BCS3" Delay="0">
+        <Squawk Code="230" ModeC="true" />
+        <Cleared Level="35000" />
+        <Position Latitude="-27.876417" Longitude="151.856111" Speed="395" Altitude="35000" />
+        <FlightPlan Active="true" Departure="YPPH" Destination="NWWW" Alternative="NVVV" Rules="I" CruiseSpeed="395" ETD="0000" ATD="0000" RFL="35000" EETHours="02" EETMins="30" FuelHours="0" FuelMins="0" Remarks="CALL/AIR VAN    /v/">PARRY Y195 BN B578 LTO DCT </FlightPlan>
+        <Route>PARRY ELENI DULIN GLENN BN GUMKI MEPEM ISTEM TEBUR NISAS LTO</Route>
+        <TimedMessages>
+          <TimedMessage Time="150" Message="AIR VAN 93: From GLENN, Request Direct GUMKI" />
+        </TimedMessages>
+      </Aircraft>
+      <Aircraft Callsign="FDX73" Type="MD11" Delay="0">
+        <Squawk Code="231" ModeC="true" />
+        <Cleared Level="33000" />
+        <Position Latitude="-20.153667" Longitude="150.732472" Speed="450" Altitude="33000" />
+        <FlightPlan Active="true" Departure="RJAA" Destination="YSSY" Alternative="YWLM" Rules="I" CruiseSpeed="450" ETD="0000" ATD="0000" RFL="33000" EETHours="9" EETMins="30" FuelHours="0" FuelMins="0" Remarks="CALL/FEDEX    /v/">DCT LAMEK DCT KELPI Y89 BESBO Y177 BN H91 CORKY H12 TESAT DCT </FlightPlan>
+        <Route>KELPI BESBO LAMUG SMOKA DAYBO BN SANEG HUUGO APAGI TESSI ADMAR SANAD MESIM CORKY SADLO BOREE TESAT</Route>
       </Aircraft>
       <Aircraft Callsign="CPA103" Type="A333" Delay="0">
         <Squawk Code="236" ModeC="true" />
@@ -3425,9 +3466,9 @@
         <FlightPlan Active="false" Departure="YBRK" Destination="YBBN" Alternative="YBCG" Rules="I" CruiseSpeed="400" ETD="0000" ATD="0000" RFL="39000" EETHours="01" EETMins="00" FuelHours="0" FuelMins="0" Remarks="CALL/VELOCITY    /v/">DCT BUDGI V111 RUROX Y177 SMOKA</FlightPlan>
         <Route>BUDGI RUROX NIROK LAMUG SMOKA YBBN</Route>
         <TimedMessages>
-        <TimedMessage Time="1080" Message="Velocity 1238, 737, IFR, Taxiing Rockhampton for Brisbane, Runway 33" />
-        <TimedMessage Time="1140" Message="Takeoff" />
-      </TimedMessages>
+          <TimedMessage Time="1080" Message="Velocity 1238, 737, IFR, Taxiing Rockhampton for Brisbane, Runway 33" />
+          <TimedMessage Time="1140" Message="Takeoff" />
+        </TimedMessages>
       </Aircraft>
       <Aircraft Callsign="FD436" Type="BE20" Delay="0">
         <Squawk Code="237" ModeC="true" />
@@ -3435,6 +3476,16 @@
         <Position Latitude="-24.488363" Longitude="151.348501" Speed="300" Altitude="14000" />
         <FlightPlan Active="true" Departure="YBBN" Destination="YBRK" Alternative="" Rules="I" CruiseSpeed="300" ETD="0000" ATD="0000" RFL="14000" EETHours="01" EETMins="00" FuelHours="0" FuelMins="0" Remarks="CALL/FLYDOC                /v/">DCT SAGLI V308 RK DCT</FlightPlan>
         <Route>OLDIB DADBO YBRK</Route>
+        <TimedMessages>
+          <TimedMessage Time="360" Message="FD436, Approaching Top Of Descent" />
+        </TimedMessages>
+      </Aircraft>
+      <Aircraft Callsign="UAE449" Type="A388" Delay="0">
+        <Squawk Code="1043" ModeC="true" />
+        <Cleared Level="36000" />
+        <Position Latitude="-27.997083" Longitude="156.391167" Speed="515" Altitude="36000" />
+        <FlightPlan Active="true" Departure="NZAA" Destination="OMDB" Alternative="YPDN" Rules="I" CruiseSpeed="515" ETD="0000" ATD="0000" RFL="36000" EETHours="15" EETMins="00" FuelHours="0" FuelMins="0" Remarks="CALLSIGN/EMIRATES   /v/">BONEY G329 BN V250 UNVAT A464 TN</FlightPlan>
+        <Route>BONEY SAVER UGTUG BN WACKO IBUNA LEBIT ATVIL UNVAT OMUBI ONELU RILVO NIVED MIGAX OPEKO TN</Route>
       </Aircraft>
       <Aircraft Callsign="XAX206" Type="A333" Delay="0">
         <Squawk Code="4453" ModeC="true" />
@@ -3463,9 +3514,9 @@
         <FlightPlan Active="false" Departure="YCFS" Destination="YBSU" Alternative="YBBN" Rules="I" CruiseSpeed="350" ETD="0000" ATD="0000" RFL="20000" EETHours="01" EETMins="00" FuelHours="0" FuelMins="0" Remarks="CALLSIGN BONZA            /v/">CFS W192 GOMOL Q69 ITIDE</FlightPlan>
         <Route>TUCAB TUCKI GOMOL MAKRU RULUN ITIDE YBSU</Route>
         <TimedMessages>
-        <TimedMessage Time="900" Message="Bonza 45, 737, IFR, Taxiing Coffs Harbour for Sunny Coast, Runway 03" />
-        <TimedMessage Time="960" Message="Takeoff" />
-      </TimedMessages>
+          <TimedMessage Time="850" Message="Bonza 45, 737, IFR, Taxiing Coffs Harbour for Sunny Coast, Runway 03" />
+          <TimedMessage Time="960" Message="Takeoff" />
+        </TimedMessages>
       </Aircraft>
       <Aircraft Callsign="JST814" Type="A320" Delay="0">
         <Squawk Code="6236" ModeC="true" />
@@ -3483,9 +3534,100 @@
       <Aircraft Callsign="ZBF" Type="C208" Delay="0">
         <Squawk Code="2451" ModeC="true" />
         <Cleared Level="6000" />
-        <Position Latitude="-24.288411000000004" Longitude="150.034536" Speed="210" Altitude="6000" />
-        <FlightPlan Active="true" Departure="YEML" Destination="YBUD" Alternative="" Rules="I" CruiseSpeed="220" ETD="0000" ATD="0000" RFL="6000" EETHours="00" EETMins="00" FuelHours="0" FuelMins="0" Remarks="/v/">DCT EML DCT RUROX DCT BUD DCT</FlightPlan>
-        <Route>RUROX YBUD</Route>
+        <Position Latitude="-24.288411000000004" Longitude="150.034536" Speed="220" Altitude="6000" />
+        <FlightPlan Active="true" Departure="YEML" Destination="YHBA" Alternative="" Rules="I" CruiseSpeed="225" ETD="0000" ATD="0000" RFL="6000" EETHours="00" EETMins="00" FuelHours="0" FuelMins="0" Remarks="/v/">DCT EML DCT RUROX DCT BUD DCT HAAVI DCT YHBA</FlightPlan>
+        <Route>RUROX BUD HAAVI</Route>
+      </Aircraft>
+      <Aircraft Callsign="SIA236" Type="A359" Delay="30" StartAuto="true">
+        <Squawk Code="1563" ModeC="true" />
+        <Cleared Level="18000" />
+        <Position Latitude="-27.357767" Longitude="153.121344" Speed="1" Altitude="15" />
+        <FlightPlan Active="true" Departure="YBBN" Destination="WSSS" Alternative="WMKK" Rules="I" CruiseSpeed="455" ETD="0000" ATD="0000" RFL="38000" EETHours="8" EETMins="40" FuelHours="0" FuelMins="0" Remarks="CALLSIGN/SINGAPORE    /v/">WACKO3/19R WACKO DCT HAWKE V129 EML T13 NTN DCT</FlightPlan>
+        <Route>DAMDA TOGIN IGMAS WACKO HAWKE COOLA EML MATAR LAKOT DOLIB NTN</Route>
+      </Aircraft>
+      <Aircraft Callsign="QFA529" Type="B738" Delay="60" StartAuto="true">
+        <Squawk Code="1071" ModeC="true" />
+        <Cleared Level="18000" />
+        <Position Latitude="-27.374708" Longitude="153.134358" Speed="1" Altitude="15" />
+        <FlightPlan Active="true" Departure="YBBN" Destination="YSSY" Alternative="YWLM" Rules="I" CruiseSpeed="440" ETD="0000" ATD="0000" RFL="36000" EETHours="0" EETMins="55" FuelHours="0" FuelMins="0" Remarks="CALLSIGN/QANTAS   /v/">SANEG1/19L SANEG H91 CORKY H12 BOREE DCT</FlightPlan>
+        <Route>BOSVU DADAN DENIS LILEE SANEG HUUGO APAGI TESSI ADMAR SANAD MESIM CORKY BOREE TESAT</Route>
+      </Aircraft>
+      <Aircraft Callsign="JII" Type="CL60" Delay="200" StartAuto="true">
+        <Squawk Code="3421" ModeC="true" />
+        <Cleared Level="18000" />
+        <Position Latitude="-27.374708" Longitude="153.134358" Speed="1" Altitude="15" />
+        <FlightPlan Active="true" Departure="YBBN" Destination="YPDN" Alternative="YWLM" Rules="I" CruiseSpeed="440" ETD="0000" ATD="0000" RFL="40000" EETHours="0" EETMins="55" FuelHours="0" FuelMins="0" Remarks="/v/">WACKO3/19L WACKO V250 UNVAT A464 TN DCT DN DCT</FlightPlan>
+        <Route>CITEE TOGIN IGMAS WACKO IBUNA LEBIT ATVIL UNVAT OMUBI ONELU RILVO NIVED MIGAX OPEKO TN</Route>
+      </Aircraft>
+      <Aircraft Callsign="FD401" Type="BE20" Delay="280" StartAuto="true">
+        <Squawk Code="3012" ModeC="true" />
+        <Cleared Level="12000" />
+        <Position Latitude="-27.357767" Longitude="153.121344" Speed="1" Altitude="15" />
+        <FlightPlan Active="true" Departure="YBBN" Destination="YHBA" Alternative="YBMK" Rules="I" CruiseSpeed="295" ETD="0000" ATD="0000" RFL="12000" EETHours="0" EETMins="55" FuelHours="0" FuelMins="0" Remarks="CALLSIGN/FLYDOC   /v/">BIXAD1/19R BIXAD Q67 GUDSO Q295 SOSTU DCT HAAVI DCT YHBA </FlightPlan>
+        <Route>DAMDA TOGIN ALBUB AMBLE DEBAY BUKBU BIXAD GUDSO SOSTU HAAVI YHBA</Route>
+        <TimedMessages>
+          <TimedMessage Time="1600" Message="FD401, from SOSTU, Request Direct HBAWD (Harvey Bay Whiskey Delta) for RNP RWY 11" />
+        </TimedMessages>
+      </Aircraft>
+      <Aircraft Callsign="IEQ" Type="C510" Delay="550" StartAuto="true">
+        <Squawk Code="3005" ModeC="true" />
+        <Cleared Level="18000" />
+        <Position Latitude="-27.374708" Longitude="153.134358" Speed="1" Altitude="15" />
+        <FlightPlan Active="true" Departure="YBBN" Destination="YBMA" Alternative="YLRE" Rules="I" CruiseSpeed="370" ETD="0000" ATD="0000" RFL="36000" EETHours="1" EETMins="40" FuelHours="0" FuelMins="0" Remarks="/v/">WACKO3/19L WACKO V250 UNVAT J89 MA DCT</FlightPlan>
+        <Route>CITEE TOGIN IGMAS WACKO IBUNA LEBIT ATVIL UNVAT PUDUR LRE SARIK MA</Route>
+      </Aircraft>
+      <Aircraft Callsign="TGW7" Type="B788" Delay="615" StartAuto="true">
+        <Squawk Code="0301" ModeC="true" />
+        <Cleared Level="18000" />
+        <Position Latitude="-28.155682" Longitude="153.500182" Speed="1" Altitude="21" />
+        <FlightPlan Active="true" Departure="YBCG" Destination="WSSS" Alternative="WMKK" Rules="I" CruiseSpeed="520" ETD="0000" ATD="0000" RFL="34000" EETHours="8" EETMins="55" FuelHours="0" FuelMins="0" Remarks="CALLSIGN/SCOOTER    /v/">YBCG/14 SCOTT Q47 KATEB Y258 LEBIT V250 UNVAT A464 KIKEM </FlightPlan>
+        <Route>SCOTT KATEB OTGAT LEBIT ATVIL UNVAT OMUBI ONELU RILVO NIVED MIGAX OPEKO TN</Route>
+      </Aircraft>
+      <Aircraft Callsign="QFA1880" Type="E190" Delay="710" StartAuto="true">
+        <Squawk Code="3005" ModeC="true" />
+        <Cleared Level="18000" />
+        <Position Latitude="-27.357767" Longitude="153.121344" Speed="1" Altitude="15" />
+        <FlightPlan Active="true" Departure="YBBN" Destination="YBCS" Alternative="YBRK" Rules="I" CruiseSpeed="402" ETD="0000" ATD="0000" RFL="36000" EETHours="1" EETMins="40" FuelHours="0" FuelMins="0" Remarks="CALLSIGN/QANTAS    /v/">BIXAD1/19R BIXAD Q67 UPOLO</FlightPlan>
+        <Route>DAMDA TOGIN ALBUB AMBLE DEBAY BUKBU BIXAD GUDSO TERUV KELPI LAMEK</Route>
+      </Aircraft>
+      <Aircraft Callsign="RXA387" Type="B738" Delay="800" StartAuto="true">
+        <Squawk Code="1066" ModeC="true" />
+        <Cleared Level="18000" />
+        <Position Latitude="-27.374708" Longitude="153.134358" Speed="1" Altitude="15" />
+        <FlightPlan Active="true" Departure="YBBN" Destination="YSSY" Alternative="YWLM" Rules="I" CruiseSpeed="440" ETD="0000" ATD="0000" RFL="36000" EETHours="0" EETMins="55" FuelHours="0" FuelMins="0" Remarks="CALLSIGN/REX   /v/">SANEG1/19L SANEG H91 CORKY H12 BOREE DCT</FlightPlan>
+        <Route>BOSVU DADAN DENIS LILEE SANEG HUUGO APAGI TESSI ADMAR SANAD MESIM CORKY BOREE TESAT</Route>
+      </Aircraft>
+        <Aircraft Callsign="VOZ962" Type="B737" Delay="1200" StartAuto="true">
+        <Squawk Code="1070" ModeC="true" />
+        <Cleared Level="18000" />
+        <Position Latitude="-27.374708" Longitude="153.134358" Speed="1" Altitude="15" />
+        <FlightPlan Active="true" Departure="YBBN" Destination="YSSY" Alternative="YWLM" Rules="I" CruiseSpeed="440" ETD="0000" ATD="0000" RFL="36000" EETHours="0" EETMins="55" FuelHours="0" FuelMins="0" Remarks="CALLSIGN/REX   /v/">SANEG1/19L SANEG H91 CORKY H12 BOREE DCT</FlightPlan>
+        <Route>BOSVU DADAN DENIS LILEE SANEG HUUGO APAGI TESSI ADMAR SANAD MESIM CORKY BOREE TESAT</Route>
+      </Aircraft>
+      <Aircraft Callsign="JST930" Type="A320" Delay="1400" StartAuto="true">
+        <Squawk Code="3643" ModeC="true" />
+        <Cleared Level="18000" />
+        <Position Latitude="-27.357767" Longitude="153.121344" Speed="1" Altitude="15" />
+        <FlightPlan Active="true" Departure="YBBN" Destination="YBCS" Alternative="YBRK" Rules="I" CruiseSpeed="402" ETD="0000" ATD="0000" RFL="36000" EETHours="1" EETMins="40" FuelHours="0" FuelMins="0" Remarks="CALLSIGN/QANTAS    /v/">BIXAD1/19R BIXAD Q67 UPOLO</FlightPlan>
+        <Route>DAMDA TOGIN ALBUB AMBLE DEBAY BUKBU BIXAD GUDSO TERUV KELPI LAMEK</Route>
+      </Aircraft>
+      <Aircraft Callsign="QFA533" Type="B738" Delay="1600" StartAuto="true">
+        <Squawk Code="1071" ModeC="true" />
+        <Cleared Level="18000" />
+        <Position Latitude="-27.374708" Longitude="153.134358" Speed="1" Altitude="15" />
+        <FlightPlan Active="true" Departure="YBBN" Destination="YSSY" Alternative="YWLM" Rules="I" CruiseSpeed="440" ETD="0000" ATD="0000" RFL="38000" EETHours="0" EETMins="55" FuelHours="0" FuelMins="0" Remarks="CALLSIGN/REX   /v/">SANEG1/19L SANEG H91 CORKY H12 BOREE DCT</FlightPlan>
+        <Route>BOSVU DADAN DENIS LILEE SANEG HUUGO APAGI TESSI ADMAR SANAD MESIM CORKY BOREE TESAT</Route>
+      </Aircraft>
+      <Aircraft Callsign="SEQ" Type="C510" Delay="0">
+        <Squawk Code="2000" ModeC="false" />
+        <Position Latitude="-24.897436" Longitude="152.317324" Speed="0" Altitude="15" />
+        <FlightPlan Active="false" Departure="YBUD" Destination="YSBK" Alternative="YSCB" Rules="I" CruiseSpeed="370" ETD="0000" ATD="0000" RFL="32000" EETHours="1" EETMins="40" FuelHours="0" FuelMins="0" Remarks="/v/">YBUD DCT SUSGI W347 ARM W160 OLTIN W214 RIC V11 BK</FlightPlan>
+        <Route>YBUD SUSGI W347 ARM W180 OLTIN YSSY </Route>
+        <TimedMessages>
+          <TimedMessage Time="2400" Message="SEQ IFR MUSTANG, TAXXIIES BUNDABERG RWY 14 FOR BANKSTOWN, 3 POB... NOTE: TOGGLE MODE C" />
+          <TimedMessage Time="2640" Message="SEQ TAKEOFF RUNWAY 14 (BUNDABERG)" />
+          <TimedMessage Time="2800" Message="SEQ (DEPARTURE REP)" />
+        </TimedMessages>
       </Aircraft>
     </Targets>
   </ScenarioFile>
